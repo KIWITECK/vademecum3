@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Listado de medicamentos</title>
+  <style>
+    :root { --fg:#111; --muted:#666; --bg:#fafafa; --card:#fff; --line:#e6e6e6; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,sans-serif; color:var(--fg); background:var(--bg)}
+    header{padding:1rem 1.25rem; border-bottom:1px solid var(--line); background:#fff; position:sticky; top:0; z-index:2}
+    .toolbar{display:flex; gap:1rem; align-items:center; flex-wrap:wrap}
+    .toolbar .group{display:flex; gap:.5rem; align-items:center}
+    input[type="search"]{padding:.6rem .8rem; border:1px solid var(--line); border-radius:.6rem; min-width:260px}
+    .count{margin-left:auto; font-weight:600}
+    main.grid{padding:1.25rem; display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1rem}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1rem; box-shadow:0 1px 1px rgba(0,0,0,.02)}
+    .card h2{margin:.2rem 0 .6rem; font-size:1.05rem; line-height:1.2}
+    .chips{display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:.5rem}
+    .chip{font-size:.78rem; border:1px solid var(--line); padding:.2rem .5rem; border-radius:999px; background:#fff}
+    .chip--empty{color:var(--muted); border-style:dashed}
+    dl.secciones{margin:0}
+    dl.secciones dt{margin-top:.6rem; font-weight:700; font-size:.9rem}
+    dl.secciones dd{margin: .25rem 0 .6rem 0}
+    .dl-nested{border-left:3px solid var(--line); padding-left:.6rem}
+    ul.list{margin:.1rem 0; padding-left:1.1rem}
+    .muted{color:var(--muted)}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    footer{padding:1rem 1.25rem; color:var(--muted)}
+    .pill{display:inline-block; padding:.15rem .45rem; border:1px solid var(--line); border-radius:.4rem; font-size:.75rem; margin-left:.4rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="toolbar" role="region" aria-label="Controles de listado">
+      <div class="group">
+        <input id="q" type="search" placeholder="Buscar por nombre, indicaciones o mecanismo…" aria-label="Buscar" />
+      </div>
+      <div class="group">
+        <input id="soloMonopolio" type="checkbox" />
+        <label for="soloMonopolio">Solo monopolio</label>
+      </div>
+      <a href="./imprimir.html">VERSIÓN IMPRESA</a>
+      <div id="count" class="count" aria-live="polite">Cargando…</div>
+    </div>
+  </header>
+
+  <main id="list" class="grid" aria-live="polite"></main>
+
+  <template id="card-tpl">
+    <article class="card"></article>
+  </template>
+
+  <script>
+    // Utilidades DOM
+    const el = (tag, attrs = {}, children = []) => {
+      const node = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (k === "class") node.className = v;
+        else if (k === "text") node.textContent = v;
+        else node.setAttribute(k, v);
+      }
+      for (const c of (Array.isArray(children) ? children : [children])) {
+        node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+      }
+      return node;
+    };
+
+    const titulo = (key) => key.replace(/_/g, " ").replace(/\b[a-z]/g, m => m.toUpperCase());
+
+    const section = (label, contentNode) => {
+      const dt = el("dt", { class: "dt", text: label });
+      const dd = el("dd", { class: "dd" });
+      dd.append(contentNode);
+      return [dt, dd];
+    };
+
+    // Render genérico tolerante a string/array/objeto/null
+    const renderValue = (val) => {
+      if (val === null || val === undefined || (Array.isArray(val) && val.length === 0)) {
+        return el("span", { class: "muted", text: "—" });
+      }
+      if (typeof val === "string" || typeof val === "number" || typeof val === "boolean") {
+        return el("span", {}, String(val));
+      }
+      if (Array.isArray(val)) {
+        const ul = el("ul", { class: "list" });
+        val.forEach(v => ul.append(el("li", {}, renderValue(v))));
+        return ul;
+      }
+      if (typeof val === "object") {
+        const dl = el("dl", { class: "dl-nested" });
+        Object.entries(val).forEach(([k, v]) => dl.append(...section(titulo(k), renderValue(v))));
+        return dl;
+      }
+      return el("span", { class: "muted", text: "—" });
+    };
+
+    const renderComposicion = (c) => {
+      if (!c) return renderValue(null);
+      const dl = el("dl", { class: "dl-nested" });
+      // Campos “comunes”
+      if ("principio_activo" in c) dl.append(...section("Principio activo", renderValue(c.principio_activo)));
+      if ("presentaciones" in c) dl.append(...section("Presentaciones", renderValue(c.presentaciones)));
+      if ("preparacion" in c)    dl.append(...section("Preparación", renderValue(c.preparacion)));
+      if ("excipientes" in c)    dl.append(...section("Excipientes", renderValue(c.excipientes)));
+      // Cualquier otro campo extra que venga en el JSON
+      Object.entries(c).forEach(([k, v]) => {
+        if (["principio_activo", "presentaciones", "preparacion", "excipientes"].includes(k)) return;
+        dl.append(...section(titulo(k), renderValue(v)));
+      });
+      return dl;
+    };
+
+    const renderCard = (m) => {
+      const card = el("article", { class: "card", "data-id": m.id });
+      const title = el("h2", { text: m.nombre });
+      const headerLine = el("div", {}, [
+        title,
+        el("span", { class: "pill", title: "¿Monopolio del Estado?" , text: `Monopolio: ${m.monopolio ? "Sí" : "No"}` })
+      ]);
+
+      const chips = el("div", { class: "chips" });
+      (m.sinonimos || []).forEach(s => chips.append(el("span", { class: "chip", text: s })));
+      if ((m.sinonimos || []).length === 0) chips.append(el("span", { class: "chip chip--empty", text: "Sin sinónimos" }));
+
+      const dl = el("dl", { class: "secciones" });
+      dl.append(...section("Composición", renderComposicion(m.composicion)));
+      dl.append(...section("Indicaciones", renderValue(m.indicaciones)));
+      dl.append(...section("Mecanismo", renderValue(m.mecanismo)));
+      dl.append(...section("Vías", renderValue(m.vias)));
+      dl.append(...section("Forma", renderValue(m.forma)));
+      dl.append(...section("Dosis", renderValue(m.dosis)));
+      if ("notas" in m) dl.append(...section("Notas", renderValue(m.notas)));
+
+      card.append(headerLine, chips, dl);
+      return card;
+    };
+
+    // Carga de datos + filtros
+    const $list  = document.getElementById("list");
+    const $q     = document.getElementById("q");
+    const $mono  = document.getElementById("soloMonopolio");
+    const $count = document.getElementById("count");
+
+    let DATA = [];
+
+    const draw = (arr) => {
+      $list.innerHTML = "";
+      const frag = document.createDocumentFragment();
+      arr.forEach(m => frag.append(renderCard(m)));
+      $list.append(frag);
+      $count.textContent = `${arr.length} medicamento${arr.length === 1 ? "" : "s"}`;
+    };
+
+    const filtrar = () => {
+      const q = $q.value.trim().toLowerCase();
+      const onlyMono = $mono.checked;
+      const res = DATA.filter(m => {
+        if (onlyMono && !m.monopolio) return false;
+        if (!q) return true;
+        const blob = [
+          m.nombre,
+          ...(m.sinonimos || []),
+          m.indicaciones,
+          m.mecanismo
+        ].filter(Boolean).join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+      draw(res);
+    };
+
+    $q.addEventListener("input", filtrar);
+    $mono.addEventListener("change", filtrar);
+
+    (async () => {
+      try {
+        const res = await fetch("medicamentosarray.json");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        DATA = await res.json();
+        draw(DATA);
+      } catch (err) {
+        console.error(err);
+        $count.textContent = "No se pudo cargar el JSON";
+        $list.innerHTML = `<div class="muted">Error cargando <span class="mono">medicamentosarray.json</span>. Verifica que el archivo esté junto a este HTML y que lo sirvas desde un servidor local.</div>`;
+      }
+    })();
+  </script>
+
+  <footer>
+    Fuente de datos: archivo JSON.
+  </footer>
+</body>
+</html>

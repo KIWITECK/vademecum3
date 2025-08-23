@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <base href="./">
+    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Medicamentos – Formato para impresión (Carta)</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="toolbar" role="region" aria-label="Controles">
+      <input id="q" type="search" placeholder="Buscar por nombre, indicaciones o mecanismo…" aria-label="Buscar" />
+      <label class="check"><input id="soloMonopolio" type="checkbox" /> Solo monopolio</label>
+      <button id="imprimir" title="Imprimir (Ctrl/Cmd+P)">🖨️ Imprimir</button>
+      <a href="./">VERSIÓN TARJETAS</a>
+
+      <div id="count" class="count" aria-live="polite">Cargando…</div>
+    </div>
+  </header>
+
+  <main id="pages" class="pages" aria-live="polite"></main>
+
+  <template id="page-tpl">
+    <section class="page" role="article"></section>
+  </template>
+
+  <script>
+    /* Utilidades DOM */
+    const el = (tag, attrs = {}, children = []) => {
+      const node = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (k === "class") node.className = v;
+        else if (k === "text") node.textContent = v;
+        else node.setAttribute(k, v);
+      }
+      (Array.isArray(children) ? children : [children]).forEach(c =>
+        node.append(c instanceof Node ? c : document.createTextNode(String(c)))
+      );
+      return node;
+    };
+    const T = (s) => (s ?? "").toString();
+
+    /* Titleize Unicode-aware */
+    const Titleize = (s = "") => s
+      .replace(/_+/g, " ")
+      .trim()
+      .replace(/(^|[\s\-\/])(\p{L})/gu, (_, sep, ch) => sep + ch.toLocaleUpperCase("es-CO"));
+
+    const section = (label, contentNode) => {
+      const dt = el("dt", { text: label });
+      const dd = el("dd");
+      dd.append(contentNode);
+      return [dt, dd];
+    };
+
+    /* Render genérico */
+    const renderValue = (val) => {
+      if (val === null || val === undefined || (Array.isArray(val) && val.length === 0)) {
+        return el("span", { class: "muted", text: "—" });
+      }
+      if (["string","number","boolean"].includes(typeof val)) {
+        return el("span", {}, String(val));
+      }
+      if (Array.isArray(val)) {
+        const ul = el("ul", { class: "list" });
+        val.forEach(v => ul.append(el("li", {}, renderValue(v))));
+        return ul;
+      }
+      if (typeof val === "object") {
+        const dl = el("dl", { class: "dl-nested" });
+        Object.entries(val).forEach(([k, v]) => dl.append(...section(Titleize(k), renderValue(v))));
+        return dl;
+      }
+      return el("span", { class: "muted", text: "—" });
+    };
+
+    /* Composición con etiquetas conocidas (acentos) */
+    const renderComposicion = (c) => {
+      if (!c) return renderValue(null);
+      const dl = el("dl", { class: "dl-nested" });
+      if ("principio_activo" in c) dl.append(...section("Principio activo", renderValue(c.principio_activo)));
+      if ("presentaciones" in c)  dl.append(...section("Presentaciones", renderValue(c.presentaciones)));
+      if ("preparacion" in c)     dl.append(...section("Preparación", renderValue(c.preparacion)));
+      if ("excipientes" in c)     dl.append(...section("Excipientes", renderValue(c.excipientes)));
+      Object.entries(c).forEach(([k, v]) => {
+        if (["principio_activo","presentaciones","preparacion","excipientes"].includes(k)) return;
+        dl.append(...section(Titleize(k), renderValue(v)));
+      });
+      return dl;
+    };
+
+    /* ====== NUEVO: carga de imagen desde img/<ID>.jpg con fallback ====== */
+    const makeImageBlock = (m) => {
+      const idStr = T(m.id).trim();
+      const fileName = encodeURIComponent(idStr) + ".jpg";
+      const src = `./img/${fileName}`;
+
+      const $title = el("div", { class: "image-title", text: "Imagen del medicamento" });
+
+      const $slot = el("div", { class: "image-slot" });
+      const $img  = el("img", {
+        alt: `Imagen del medicamento: ${T(m.nombre)} (ID ${idStr})`
+      });
+
+
+      // Asigna src al final para que los listeners ya estén listos
+      $img.src = src;
+
+      $slot.append($img);
+
+      return el("aside", { class: "image-block" }, [ $title, $slot ]);
+    };
+
+    /* Página tamaño Carta por medicamento */
+    const renderPage = (m, idx, total) => {
+      const $page = document.getElementById("page-tpl").content.firstElementChild.cloneNode(true);
+
+      const head = el("div", { class: "head" }, [
+        el("div", {}, [
+          el("h1", { text: T(m.nombre) }),
+          el("div", { class: "chips" },
+            (m.sinonimos && m.sinonimos.length)
+              ? m.sinonimos.map(s => el("span", { class: "chip", text: s }))
+              : [el("span", { class: "chip chip--empty", text: "Sin sinónimos" })]
+          )
+        ]),
+        el("div", { class: "meta" }, [
+          el("span", { class: "pill", title:"¿Monopolio del Estado?", text: `Monopolio del Estado: ${m.monopolio ? "Sí" : "No"}` }),
+        ])
+      ]);
+
+      const dl = el("dl", { class: "secciones" });
+      dl.append(...section("Composición", renderComposicion(m.composicion)));
+      dl.append(...section("Indicaciones terapéuticas", renderValue(m.indicaciones)));
+      dl.append(...section("Mecanismo de acción", renderValue(m.mecanismo)));
+      dl.append(...section("Vías de administración", renderValue(m.vias)));
+      dl.append(...section("Formas farmacéuticas", renderValue(m.forma)));
+      dl.append(...section("Dosis", renderValue(m.dosis)));
+      if ("notas" in m) dl.append(...section("Notas", renderValue(m.notas)));
+
+      const imageBlock = makeImageBlock(m);
+      const sheet = el("div", { class: "sheet" }, [ dl, imageBlock ]);
+
+     
+
+      $page.append(head, sheet);
+      return $page;
+    };
+
+    /* Carga + filtros */
+    const $pages = document.getElementById("pages");
+    const $q     = document.getElementById("q");
+    const $mono  = document.getElementById("soloMonopolio");
+    const $count = document.getElementById("count");
+    const $print = document.getElementById("imprimir");
+
+    let DATA = [];
+
+    const draw = (arr) => {
+      $pages.innerHTML = "";
+      const frag = document.createDocumentFragment();
+      arr.forEach((m,i) => frag.append(renderPage(m, i, arr.length)));
+      $pages.append(frag);
+      $count.textContent = `${arr.length} medicamento${arr.length === 1 ? "" : "s"} (formato carta)`;
+    };
+
+    const filtrar = () => {
+      const q = $q.value.trim().toLowerCase();
+      const onlyMono = $mono.checked;
+      const res = DATA.filter(m => {
+        if (onlyMono && !m.monopolio) return false;
+        if (!q) return true;
+        const blob = [
+          m.nombre,
+          ...(m.sinonimos || []),
+          m.indicaciones,
+          m.mecanismo
+        ].filter(Boolean).join(" ").toLowerCase();
+        return blob.includes(q);
+      });
+      draw(res);
+    };
+
+    $q.addEventListener("input", filtrar);
+    $mono.addEventListener("change", filtrar);
+    $print.addEventListener("click", () => window.print());
+
+    (async () => {
+      try {
+        const res = await fetch("medicamentosarray.json");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        DATA = await res.json();
+        draw(DATA);
+      } catch (err) {
+        console.error(err);
+        $count.textContent = "No se pudo cargar el JSON";
+        $pages.innerHTML = `<section class="page"><h1>Error</h1><p class="muted">No se pudo cargar <span class="mono">medicamentosarray.json</span>. Asegúrate de que el archivo esté junto a este HTML y que lo abras desde un servidor local (no por <span class="mono">file://</span>).</p></section>`;
+      }
+    })();
+  </script>
+</body>
+</html>
