@@ -212,7 +212,8 @@
             "Intravenosa",
             "Intramuscular",
             "Subcutánea",
-            "Oral"
+            "Oral",
+            "Epidural"
         ],
         "forma": [
             "Solución inyectable",
