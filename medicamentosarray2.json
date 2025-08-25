@@ -1,0 +1,1106 @@
+[
+  {
+    "id": 1,
+    "nombre": "Clorhidrato de cocaína",
+    "sinonimos": [
+      "Cocaína"
+    ],
+    "composicion": {
+      "principio_activo": "clorhidrato de cocaína",
+      "preparacion": "Sal formada por la cocaína base y ácido clorhídrico",
+      "presentaciones": "polvo estéril"
+    },
+    "indicaciones": "Anestesia tópica en cirugía de vías respiratorias superiores (muy raro en Colombia).",
+    "mecanismo": "Bloquea transportadores de dopamina, noradrenalina y serotonina; produce vasoconstricción y efecto anestésico local.",
+    "vias": [
+      "tópica (mucosas)",
+      "nasal"
+    ],
+    "forma": [
+      "polvo estéril"
+    ],
+    "dosis": "Uso limitado hospitalario: suele emplearse solución acuosa al 4–10% como anestésico tópico.",
+    "monopolio": true
+  },
+  {
+    "id": 2,
+    "nombre": "Fenobarbital",
+    "sinonimos": [
+      "Gardenal",
+      "Luminal",
+      "Fenobarbital FNE"
+    ],
+    "composicion": {
+      "principio_activo": "fenobarbital",
+      "excipientes": [
+        "lactosa monohidratada",
+        "almidón de maíz",
+        "estearato de magnesio",
+        "agua",
+        "propilenglicol",
+        "alcohol bencílico"
+      ]
+    },
+    "indicaciones": [
+      "Epilepsia (tónico-clónica, parcial)",
+      "Convulsiones neonatales o status epiléptico",
+      "Sedante/hipnótico de segunda línea"
+    ],
+    "mecanismo": "Potencia receptores GABA-A prolongando la apertura del canal de cloro, generando inhibición neuronal.",
+    "vias": [
+      "oral",
+      "intramuscular (IM)",
+      "intravenosa (IV) en crisis convulsivas"
+    ],
+    "forma": [
+      "tabletas",
+      "solución oral",
+      "solución inyectable"
+    ],
+    "dosis": {
+      "adultos_oral": "50–250 mg/día.",
+      "ninos_oral": "3–6 mg/kg/día (promedio).",
+      "intravenosa_estatus_epileptico": "Dosis de carga única, luego mantenimiento diario."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 3,
+    "nombre": "Heroína (diacetilmorfina)",
+    "sinonimos": [
+      "Diacetilmorfina",
+      "Diamorfina"
+    ],
+    "composicion": {
+      "principio_activo": "diacetilmorfina clorhidrato",
+      "excipientes": [
+        "cloruro de sodio",
+        "agua para inyección",
+        "ácido clorhídrico (ajuste de pH)",
+        "hidróxido de sodio (ajuste de pH)"
+      ]
+    },
+    "indicaciones": "No tiene uso terapéutico permitido en Colombia.",
+    "mecanismo": "Opioide semisintético agonista de receptores µ en SNC; analgesia, euforia, sedación y depresión respiratoria.",
+    "vias": [
+      "intravenosa (IV)",
+      "subcutánea (SC)"
+    ],
+    "forma": [
+      "polvo estéril"
+    ],
+    "dosis": "No hay dosis terapéuticas autorizadas en Colombia.",
+    "monopolio": true
+  },
+  {
+    "id": 4,
+    "nombre": "Hidrato de cloral",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "hidrato de cloral",
+      "excipientes": [
+        "glicerina",
+        "jarabe simple o sacarosa",
+        "agua purificada",
+        "aromatizantes"
+      ]
+    },
+    "indicaciones": [
+      "Sedación previa a procedimientos",
+      "Trastorno del sueño de corta duración",
+      "Convulsiones refractarias"
+    ],
+    "mecanismo": "Su metabolito activo tricloroetanol potencia la acción GABA en SNC: sedación, hipnosis, anticonvulsivante leve (sin propiedades analgésicas).",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "solución oral"
+    ],
+    "dosis": {
+      "ninos": "25–75 mg/kg VO, 30 minutos antes del procedimiento.",
+      "adultos": "500 mg a 1 g como dosis única; máximo 2 g/día. Ajuste según edad, peso y condición clínica."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 5,
+    "nombre": "Hidromorfona",
+    "sinonimos": [
+      "Dilaudid",
+      "Hidromorfona FNE"
+    ],
+    "composicion": {
+      "principio_activo": "hidromorfona clorhidrato",
+      "excipientes": [
+        "lactosa monohidratada",
+        "estearato de magnesio",
+        "celulosa microcristalina",
+        "hipromelosa",
+        "óxido de hierro",
+        "cloruro de sodio",
+        "agua"
+      ]
+    },
+    "indicaciones": [
+      "Dolor moderado a severo",
+      "Dolor oncológico",
+      "Dolor posquirúrgico"
+    ],
+    "mecanismo": "Agonista µ opioide; bloquea transmisión del dolor a nivel espinal y cerebral, con analgesia intensa, sedación y euforia.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)",
+      "subcutánea (SC)",
+      "oral"
+    ],
+    "forma": [
+      "solución inyectable",
+      "tabletas"
+    ],
+    "dosis": {
+      "oral": "2–4 mg cada 4–6 horas; máximo 24 mg/día.",
+      "parenteral": "1–2 mg cada 4–6 horas; máximo 24 mg/día."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 6,
+    "nombre": "Meperidina (petidina)",
+    "sinonimos": [
+      "Dolantina",
+      "Demerol",
+      "Meperidina FNE"
+    ],
+    "composicion": {
+      "principio_activo": "meperidina clorhidrato",
+      "excipientes": [
+        "cloruro de sodio",
+        "ácido clorhídrico (ajuste de pH)",
+        "agua para inyección"
+      ]
+    },
+    "indicaciones": [
+      "Dolor moderado a fuerte",
+      "Uso pre-anestésico o analgésico en cirugía"
+    ],
+    "mecanismo": "Agonista µ opioide; inhibe la transmisión nociceptiva en SNC produciendo analgesia, sedación y euforia leve.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)",
+      "subcutánea (SC)"
+    ],
+    "forma": [
+      "solución inyectable"
+    ],
+    "dosis": {
+      "IM_SC": "50–100 mg cada 4–6 horas; máximo 600 mg/día.",
+      "IV_lenta": "25–50 mg, repetir cada 3–4 horas; máximo 600 mg/día."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 7,
+    "nombre": "Morfina",
+    "sinonimos": [
+      "Morfina Clorhidrato FNE",
+      "Morfina sulfato"
+    ],
+    "composicion": {
+      "principio_activo": [
+        "morfina sulfato",
+        "morfina clorhidrato (según presentación)"
+      ],
+      "excipientes": [
+        "lactosa monohidratada",
+        "celulosa microcristalina",
+        "estearato de magnesio",
+        "cloruro de sodio",
+        "ácido clorhídrico o hidróxido de sodio (ajuste de pH)",
+        "agua"
+      ]
+    },
+    "indicaciones": [
+      "Dolor agudo o crónico severo",
+      "Dolor oncológico avanzado",
+      "Cuidados paliativos",
+      "Dolor postoperatorio",
+      "Edema pulmonar agudo"
+    ],
+    "mecanismo": "Agonista µ opioide potente en SNC y periférico; analgesia intensa, sedación, euforia y depresión respiratoria por inhibición nociceptiva.",
+    "vias": [
+      "oral",
+      "subcutánea (SC)",
+      "intramuscular (IM)",
+      "intravenosa (IV)",
+      "epidural",
+      "intratecal"
+    ],
+    "forma": [
+      "solución inyectable",
+      "solución oral"
+    ],
+    "dosis": {
+      "adultos_SC_IM": "5–20 mg cada 4 h (dosis única).",
+      "adultos_IV_lenta": "2–15 mg, repetir según dolor.",
+      "adultos_oral": "10–20 mg cada 4–6 h.",
+      "adultos_epidural": "≈5 mg dosis única; máximo 10 mg en 24 h.",
+      "adultos_intratecal": "0,2–1 mg en 24 h.",
+      "ninos": "Dosis según peso (µg o mg/kg) cada 4 h por VO/SC/IM."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 8,
+    "nombre": "Metadona",
+    "sinonimos": [
+      "Metadona Clorhidrato FNE",
+      "Methadose"
+    ],
+    "composicion": {
+      "principio_activo": "metadona clorhidrato",
+      "presentaciones": {
+        "solucion_oral": [
+          "agua purificada",
+          "glicerina",
+          "sacarosa/sorbitol",
+          "ácido cítrico",
+          "parabenos (conservantes)",
+          "colorantes",
+          "saborizantes"
+        ],
+        "tabletas": [
+          "lactosa",
+          "almidón/celulosa",
+          "povidona",
+          "estearato de magnesio",
+          "dióxido de silicio"
+        ]
+      }
+    },
+    "indicaciones": [
+      "Dolor intenso de cualquier etiología",
+      "Tratamiento sustitutivo en dependencia a opiáceos y síndrome de abstinencia"
+    ],
+    "mecanismo": "Agonista µ opioide sintético de acción prolongada; además bloquea NMDA y la recaptación de serotonina y noradrenalina.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas",
+      "solución oral"
+    ],
+    "dosis": {
+      "dolor_cronico": "Inicio 10–30 mg/día, ajustar gradualmente según clínica.",
+      "sustitucion_dependencia": "Inicio 20–30 mg/día; ajuste habitual 60–120 mg/día."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 9,
+    "nombre": "Primidona",
+    "sinonimos": [
+      "Mysoline"
+    ],
+    "composicion": {
+      "principio_activo": "primidona",
+      "excipientes": [
+        "povidona",
+        "gelatina",
+        "estearato de magnesio",
+        "talco",
+        "lactosa",
+        "almidón"
+      ]
+    },
+    "indicaciones": [
+      "Epilepsia (tónico-clónica, focal, psicomotora)",
+      "Temblor esencial",
+      "Neuralgia",
+      "Dolor neuropático",
+      "Tinnitus"
+    ],
+    "mecanismo": "Profármaco metabolizado a fenobarbital y feniletilmalonamida; modula flujos iónicos neuronales potenciando GABA.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos": "Inicio 100–125 mg una vez al día; aumentar gradualmente hasta 750–1500 mg/día en 2–3 tomas (máx. 2000 mg/día).",
+      "ninos": "10–25 mg/kg/día en varias tomas (generalmente no excede 1000 mg/día)."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 10,
+    "nombre": "Metilfenidato",
+    "sinonimos": [
+      "METILFENIDATO FNE",
+      "Ritalin",
+      "Concerta"
+    ],
+    "composicion": {
+      "principio_activo": "metilfenidato clorhidrato",
+      "excipientes": [
+        "lactosa monohidratada",
+        "almidón",
+        "estearato de magnesio",
+        "povidona",
+        "hipromelosa",
+        "macrogoles",
+        "colorantes autorizados"
+      ]
+    },
+    "indicaciones": "Trastorno por déficit de atención e hiperactividad (TDAH) en mayores de 6 años, dentro de un programa integral.",
+    "mecanismo": "Inhibidor de la recaptación de dopamina y noradrenalina; aumenta la neurotransmisión en SNC.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas (liberación inmediata)",
+      "tabletas (liberación prolongada)"
+    ],
+    "dosis": {
+      "liberacion_inmediata": "Inicial 5 mg 1–2 veces/día; ajuste gradual. Requerimiento habitual 20–30 mg/día en varias tomas. Máx. 60 mg/día.",
+      "liberacion_prolongada": "Inicial 18 mg una vez al día en la mañana; puede aumentarse hasta 72 mg/día."
+    },
+    "monopolio": true
+  },
+  {
+    "id": 11,
+    "nombre": "Opio",
+    "sinonimos": [],
+    "composicion": {
+      "mezcla_alcaloides": {
+        "principales": {
+          "morfina": "10–15%",
+          "codeina": "0,5–2%",
+          "tebaina": "1–5%"
+        },
+        "secundarios": [
+          "noscapina",
+          "papaverina"
+        ]
+      }
+    },
+    "indicaciones": "No se usa directamente en pacientes; materia prima para obtener alcaloides (morfina, codeína, tebaina).",
+    "mecanismo": "Agonista de receptores opioides µ y κ; efecto analgésico y sedante.",
+    "vias": [
+      "oral",
+      "inyectable"
+    ],
+    "forma": [
+      "polvo/extracto seco",
+      "soluciones inyectables",
+      "tabletas/cápsulas",
+      "jarabes antitusivos"
+    ],
+    "dosis": "No disponible.",
+    "monopolio": true
+  },
+  {
+    "id": 12,
+    "nombre": "Alprazolam",
+    "sinonimos": [
+      "Xanax",
+      "Tafil"
+    ],
+    "composicion": {
+      "principio_activo": "alprazolam",
+      "excipientes": [
+        "lactosa monohidratada",
+        "celulosa microcristalina",
+        "almidón de maíz",
+        "estearato de magnesio",
+        "dióxido de silicio coloidal"
+      ]
+    },
+    "indicaciones": [
+      "Trastorno de ansiedad",
+      "Angustia/ataques de pánico",
+      "Ansiedad asociada a depresión"
+    ],
+    "mecanismo": "Se une al receptor GABA-A aumentando la entrada de cloro; efectos ansiolíticos, sedantes, anticonvulsivos y relajantes musculares.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "comprimidos"
+    ],
+    "dosis": {
+      "ansiedad": "0,25–0,5 mg cada 8–12 h; ajustar sin exceder 4 mg/día.",
+      "trastorno_panico": "Inicio 0,5 mg cada 8 h; ajuste gradual hasta control (máx. usual 6 mg/día)."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 13,
+    "nombre": "Diazepam",
+    "sinonimos": [
+      "Valium",
+      "Ansedan"
+    ],
+    "composicion": {
+      "principio_activo": "diazepam",
+      "presentaciones": {
+        "tabletas": [
+          "lactosa monohidrato",
+          "almidón de maíz",
+          "celulosa microcristalina",
+          "estearato de magnesio",
+          "colorantes y otros"
+        ],
+        "inyectable": [
+          "etanol",
+          "propilenglicol",
+          "alcohol bencílico",
+          "agua para inyección"
+        ]
+      }
+    },
+    "indicaciones": [
+      "Trastorno de ansiedad",
+      "Abstinencia alcohólica",
+      "Espasmos musculares",
+      "Convulsiones",
+      "Sedación preoperatoria/procedimientos"
+    ],
+    "mecanismo": "Facilita la acción del GABA en SNC; efectos sedantes, ansiolíticos, anticonvulsivos y relajantes.",
+    "vias": [
+      "oral (VO)",
+      "intramuscular (IM)",
+      "intravenosa (IV)",
+      "rectal"
+    ],
+    "forma": [
+      "tabletas",
+      "solución oral/gotas",
+      "solución inyectable",
+      "solución rectal"
+    ],
+    "dosis": {
+      "adultos_oral": "2–10 mg, 2–4 veces/día (máx. 40 mg/día).",
+      "adultos_IV_IM": "2–10 mg cada 3–4 h si es necesario (máx. 40 mg/día).",
+      "adultos_rectal": "5–10 mg; en crisis puede repetirse a los 10–15 min (máx. 30 mg/día).",
+      "ninos_oral": "0,12–0,8 mg/kg/día dividido en 3–4 dosis.",
+      "ninos_rectal_convulsiones": "0,2–0,5 mg/kg dosis única; puede repetirse 1 vez."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 14,
+    "nombre": "Midazolam",
+    "sinonimos": [
+      "Midazolam Biosano",
+      "Midazolam Vitalis",
+      "Dormonid",
+      "Dormicum"
+    ],
+    "composicion": {
+      "principio_activo": "midazolam clorhidrato",
+      "excipientes": [
+        "(tabletas) lactosa, almidón, celulosa, estearato de magnesio",
+        "(inyectable) cloruro de sodio, ácido clorhídrico, agua para inyección"
+      ]
+    },
+    "indicaciones": [
+      "Procedimientos cortos (sedación/premedicación)",
+      "Control de convulsiones",
+      "Sedación en ventilación mecánica",
+      "Insomnio de corta duración"
+    ],
+    "mecanismo": "Benzodiacepina de acción rápida que aumenta la frecuencia de apertura del canal de cloro en el receptor GABA-A.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)",
+      "oral"
+    ],
+    "forma": [
+      "solución inyectable",
+      "tabletas recubiertas"
+    ],
+    "dosis": {
+      "adultos_oral_premedicacion": "7,5–15 mg VO, 30 min antes.",
+      "adultos_IV_sedacion_consciente": "Inicial 1–2 mg lento; puede repetirse hasta 2,5–5 mg según respuesta.",
+      "adultos_IM_premedicacion": "0,07–0,1 mg/kg, 30–60 min antes.",
+      "ninos_oral": "0,5–0,7 mg/kg (máx. 20 mg).",
+      "ninos_IV": "0,05–0,1 mg/kg; ajustar según respuesta."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 15,
+    "nombre": "Fentanilo",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "fentanilo",
+      "excipientes": [
+        "cloruro de sodio",
+        "agua para inyección",
+        "ácido cítrico o citrato de sodio"
+      ]
+    },
+    "indicaciones": [
+      "Analgesia intensa en anestesia complementaria (inducción, sedación intraoperatoria)",
+      "Terapéutica analgésica en dolor intenso"
+    ],
+    "mecanismo": "Potente agonista selectivo de receptores µ-opioide; inhibe la transmisión del dolor, sedación y depresión respiratoria.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)"
+    ],
+    "forma": [
+      "solución inyectable"
+    ],
+    "dosis": {
+      "adultos_analgesico": "50–100 mcg IV/IM cada 1–2 h según necesidad (máx. 600 mcg/día).",
+      "induccion_anestesica": "2–20 mcg/kg IV (máx. 600 mcg/día).",
+      "mantenimiento_anestesico": "0,5–10 mcg/kg IV según procedimiento (máx. 600 mcg/día).",
+      "ninos_anestesia_IV": "2–5 mcg/kg (máx. 10 mcg/kg por dosis)."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 16,
+    "nombre": "Ketamina",
+    "sinonimos": [
+      "Ketamina clorhidrato"
+    ],
+    "composicion": {
+      "principio_activo": "ketamina (como clorhidrato)",
+      "excipientes": [
+        "agua para inyección",
+        "cloruro de bencetonio",
+        "cloruro de sodio"
+      ]
+    },
+    "indicaciones": [
+      "Anestesia general o sedación en procedimientos menores",
+      "Analgesia en trauma manteniendo reflejos respiratorios"
+    ],
+    "mecanismo": "Antagonista no competitivo de receptores NMDA; produce anestesia disociativa con analgesia y amnesia parcial.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)"
+    ],
+    "forma": [
+      "solución inyectable"
+    ],
+    "dosis": {
+      "induccion_adultos_IV": "1–2 mg/kg (efecto 30 s, 5–10 min); no superar 200 mg por dosis.",
+      "induccion_adultos_IM": "4–6 mg/kg (efecto 3–5 min, 12–25 min); no superar 13 mg/kg/día.",
+      "mantenimiento_IV": "0,5–1 mg/kg en bolo o infusión 0,5–2 mg/min; no sobrepasar 200 mg por dosis.",
+      "analgesia_bajas_dosis": "0,25–0,5 mg/kg IV lenta o perfusión; no sobrepasar 200 mg por dosis.",
+      "ninos_induccion_IV": "1–2 mg/kg; no sobrepasar 200 mg por dosis.",
+      "ninos_induccion_IM": "4–6 mg/kg; no superar 13 mg/kg/día."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 17,
+    "nombre": "Clozapina",
+    "sinonimos": [
+      "Lodux"
+    ],
+    "composicion": {
+      "principio_activo": "clozapina",
+      "excipientes": [
+        "lactosa",
+        "celulosa microcristalina",
+        "povidona",
+        "almidón",
+        "croscarmelosa/AC-DI-SOL",
+        "estearato de magnesio",
+        "sílice coloidal"
+      ]
+    },
+    "indicaciones": [
+      "Esquizofrenia resistente al tratamiento",
+      "Prevención de conducta suicida en esquizofrenia o trastorno esquizoafectivo",
+      "Trastornos psicóticos graves bajo supervisión"
+    ],
+    "mecanismo": "Bloqueo preferente de receptores dopamina D4 (y en menor medida D2) y de serotonina 5-HT2A/2C; reduce síntomas psicóticos y efectos motores.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos_inicio": "12,5 mg 1–2 veces/día.",
+      "ajuste": "Aumentar 25–50 mg/día cada 2–3 días según tolerancia.",
+      "mantenimiento": "300–600 mg/día en 2–3 tomas.",
+      "maximo": "900 mg/día.",
+      "adultos_mayores": "Inicio 12,5 mg/día; aumentos más lentos."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 18,
+    "nombre": "Zolpidem",
+    "sinonimos": [
+      "Valpizob",
+      "Atrimon",
+      "Leponex"
+    ],
+    "composicion": {
+      "principio_activo": "tartrato de zolpidem",
+      "excipientes": [
+        "lactosa monohidrato",
+        "almidón de maíz",
+        "celulosa microcristalina",
+        "povidona",
+        "sílice coloidal",
+        "estearato de magnesio"
+      ]
+    },
+    "indicaciones": "Tratamiento de esquizofrenia resistente a otros antipsicóticos y reducción de conductas suicidas.",
+    "mecanismo": "Se une selectivamente a receptores GABA-A subtipo ω1 (BZ1), potenciando la acción de GABA con sedación e inducción del sueño.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos_menores_65": "10 mg noche, inmediatamente al acostarse; dosis única, no repetir.",
+      "ancianos_o_hepaticos_o_debil": "Iniciar con 5 mg.",
+      "duracion": "Máxima 2 semanas; ideal < 4 semanas incluyendo retirada gradual."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 19,
+    "nombre": "Zopiclona",
+    "sinonimos": [
+      "Sedorm"
+    ],
+    "composicion": {
+      "principio_activo": "tartrato de zopiclona",
+      "excipientes": [
+        "lactosa monohidrato",
+        "fosfato de calcio dibásico",
+        "almidón de maíz",
+        "almidón glicolato de sodio",
+        "estearato de magnesio",
+        "hipromelosa",
+        "dióxido de titanio"
+      ]
+    },
+    "indicaciones": [
+      "Insomnio transitorio o crónico leve (inicio y mantenimiento del sueño)"
+    ],
+    "mecanismo": "Se une a receptores GABA-A, potenciando GABA; efecto sedante, hipnótico y ansiolítico.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "comprimidos recubiertos"
+    ],
+    "dosis": {
+      "adultos": "7,5 mg por la noche antes de dormir.",
+      "adultos_mayores_o_hepatico_renal": "3,75 mg por la noche.",
+      "duracion_maxima": "2–4 semanas."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 20,
+    "nombre": "Lorazepam",
+    "sinonimos": [
+      "Ativan"
+    ],
+    "composicion": {
+      "principio_activo": "lorazepam",
+      "excipientes": [
+        "lactosa",
+        "celulosa microcristalina",
+        "almidón",
+        "estearato de magnesio",
+        "colorantes (según laboratorio)"
+      ]
+    },
+    "indicaciones": [
+      "Trastornos de ansiedad",
+      "Trastornos del sueño por ansiedad",
+      "Abstinencia alcohólica",
+      "Premedicación médica o quirúrgica"
+    ],
+    "mecanismo": "Potencia la acción del GABA en receptores GABA-A: efectos ansiolíticos, sedantes, hipnóticos, anticonvulsivantes, relajantes y amnésicos.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "ansiedad": "1–2 mg, 2–3 veces/día (máx. 10 mg/día).",
+      "insomnio_por_ansiedad": "1–2 mg al acostarse.",
+      "premedicacion": "2–4 mg VO, 1–2 horas antes."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 21,
+    "nombre": "Bromazepam",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "bromazepam",
+      "excipientes": [
+        "lactosa monohidrato",
+        "almidón de maíz",
+        "celulosa microcristalina",
+        "estearato de magnesio",
+        "dióxido de silicio coloidal"
+      ]
+    },
+    "indicaciones": [
+      "Trastornos de ansiedad/angustia",
+      "Trastornos psicosomáticos por ansiedad (palpitaciones, tensión muscular, molestias GI)",
+      "Estados de agitación/irritabilidad",
+      "Insomnio asociado a ansiedad"
+    ],
+    "mecanismo": "Benzodiacepina: potencia GABA en receptor GABA-A; inhibición neuronal con relajación, ansiolisis y sedación.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos": "1,5–3 mg, 2–3 veces/día; en casos severos hasta 6–12 mg, 2–3 veces/día (máx. 36 mg/día).",
+      "adultos_mayores_o_debilitados": "Inicio 1,5 mg 2 veces/día; aumentar solo si es necesario."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 22,
+    "nombre": "Tiopental sódico",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "tiopental sódico",
+      "presentaciones": "Frascos liofilizados 0,5 g, 1 g o 2,5 g; reconstituir con agua estéril o solución salina."
+    },
+    "indicaciones": [
+      "Inducción de anestesia general",
+      "Sedación en procedimientos cortos",
+      "Control de convulsiones refractarias (estatus epiléptico)",
+      "Reducción de presión intracraneana en UCI"
+    ],
+    "mecanismo": "Barbitúrico de acción ultracorta que potencia GABA-A, aumenta entrada de cloro y deprime rápidamente el SNC.",
+    "vias": [
+      "intravenosa (IV)"
+    ],
+    "forma": [
+      "polvo estéril para reconstituir"
+    ],
+    "dosis": {
+      "adultos_induccion_IV": "3–5 mg/kg (administración lenta, 25–50 mg cada 30 s hasta efecto). Máx. 1 g/24 h.",
+      "ninos_induccion_IV": "5–6 mg/kg (misma técnica). Máx. 7 mg/kg por dosis."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 23,
+    "nombre": "Oxazepam",
+    "sinonimos": [
+      "Sobril"
+    ],
+    "composicion": {
+      "principio_activo": "oxazepam",
+      "excipientes": [
+        "lactosa",
+        "almidón",
+        "estearato de magnesio",
+        "celulosa microcristalina",
+        "sílice coloidal anhidra"
+      ]
+    },
+    "indicaciones": [
+      "Ansiedad",
+      "Tensión emocional",
+      "Insomnio por ansiedad",
+      "Síntomas de abstinencia alcohólica"
+    ],
+    "mecanismo": "Benzodiacepina de acción intermedia que potencia GABA-A: sedación, ansiolisis y relajación muscular.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos_ansiedad_leve_moderada": "10–15 mg, 3–4 veces/día.",
+      "adultos_ansiedad_severa_o_insomnio": "15–30 mg, 3–4 veces/día (máx. 120 mg/día).",
+      "adultos_mayores_debilitados": "Inicio 10 mg, 2–3 veces/día; ajustar según respuesta."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 24,
+    "nombre": "Haloperidol",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "haloperidol",
+      "excipientes": [
+        "lactosa monohidrato",
+        "almidón de maíz",
+        "talco",
+        "estearato de magnesio",
+        "povidona",
+        "dióxido de silicio"
+      ]
+    },
+    "indicaciones": [
+      "Esquizofrenia",
+      "Agresividad/agitación en pacientes psiquiátricos",
+      "Síndrome de Tourette",
+      "Náuseas"
+    ],
+    "mecanismo": "Bloquea receptores dopaminérgicos D2; disminuye dopamina con efecto antipsicótico y sedante.",
+    "vias": [
+      "intramuscular (IM)",
+      "intravenosa (IV)",
+      "oral"
+    ],
+    "forma": [
+      "solución inyectable estéril",
+      "solución oral",
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos_oral": "2–10 mg/día, ajustable hasta 20 mg/día según respuesta.",
+      "adultos_IM_agitacion_aguda": "2–5 mg; repetir cada 4–8 h según necesidad (máx. 30 mg/día).",
+      "adultos_decanoato_IM": "25–50 mg cada 4 semanas (máx. 300 mg/mes).",
+      "adultos_mayores": "Usar dosis más bajas (0,5–2 mg/día)."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 25,
+    "nombre": "Clonazepam",
+    "sinonimos": [
+      "Rivotril",
+      "Coquan"
+    ],
+    "composicion": {
+      "principio_activo": "clonazepam",
+      "presentaciones": {
+        "tabletas": [
+          "lactosa monohidrato",
+          "almidón pregelatinizado",
+          "celulosa microcristalina",
+          "estearato de magnesio",
+          "dióxido de silicio coloidal"
+        ],
+        "solucion_oral_gotas": [
+          "propilenglicol",
+          "ácido cítrico",
+          "sacarina sódica",
+          "agua purificada"
+        ]
+      }
+    },
+    "indicaciones": [
+      "Trastorno de ansiedad generalizada",
+      "Epilepsia",
+      "Síndrome de abstinencia alcohólica",
+      "Trastorno del sueño"
+    ],
+    "mecanismo": "Potencia GABA en SNC, inhibiendo actividad neuronal: efectos antiepilépticos, ansiolíticos y sedantes.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas",
+      "gotas orales"
+    ],
+    "dosis": {
+      "adultos": "1–4 mg/día en dosis divididas (máx. 20 mg/día).",
+      "ninos": "0,01–0,03 mg/kg/día; ajustar gradualmente (máx. 0,2 mg/kg/día).",
+      "adultos_mayores": "Dosis iniciales más bajas (0,25–1 mg/día), ajustar con cuidado."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 26,
+    "nombre": "Naloxona",
+    "sinonimos": [],
+    "composicion": {
+      "principio_activo": "naloxona clorhidrato",
+      "excipientes": [
+        "cloruro de sodio",
+        "agua para inyectables",
+        "ácido clorhídrico o hidróxido de sodio (ajuste de pH)"
+      ]
+    },
+    "indicaciones": [
+      "Reversión de sobredosis por opioides",
+      "Tratamiento de depresión respiratoria por opioides (heroína, morfina, oxicodona)",
+      "Emergencias por intoxicación opioide"
+    ],
+    "mecanismo": "Potencia el neurotransmisor GABA en el sistema nervioso, inhibiendo la actividad neuronal y produciendo efectos antiepilépticos, ansiolíticos y sedantes.",
+    "vias": [
+      "intravenosa (IV)",
+      "intramuscular (IM)",
+      "subcutánea (SC)"
+    ],
+    "forma": [
+      "solución inyectable"
+    ],
+    "dosis": {
+      "adultos": "0,4–2 mg IV/IM/SC cada 2–3 minutos si es necesario (máx. 4 mg; hasta 10 mg en sobredosis por opioides potentes).",
+      "ninos": "0,1 mg/kg IV; repetir cada 2–3 min (máx. 2 mg).",
+      "neonatos": "0,01 mg/kg IV."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 27,
+    "nombre": "Tapentadol",
+    "sinonimos": [
+      "Palexis retard"
+    ],
+    "composicion": {
+      "principio_activo": "tapentadol hidrocloruro",
+      "excipientes": [
+        "celulosa microcristalina",
+        "povidona",
+        "almidón pregelatinizado",
+        "estearato de magnesio",
+        "dióxido de silicio coloidal"
+      ]
+    },
+    "indicaciones": [
+      "Dolor moderado a severo en adultos",
+      "Dolor agudo o crónico cuando otros analgésicos son insuficientes",
+      "Puede usarse en dolor neuropático (según criterio)"
+    ],
+    "mecanismo": "Doble mecanismo: agonista µ-opioide e inhibidor de recaptación de noradrenalina; analgesia central potente.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas de liberación inmediata (IR)",
+      "tabletas de liberación prolongada (PR)"
+    ],
+    "dosis": {
+      "IR": "50–100 mg cada 4–6 h; dosis inicial habitual 50 mg; máx. 700 mg el primer día, luego hasta 600 mg/día.",
+      "PR": "50–250 mg cada 12 h; máx. 500 mg/día."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 28,
+    "nombre": "Oxicodona",
+    "sinonimos": [
+      "Oxycontin",
+      "Oxynorm",
+      "Oxicodona"
+    ],
+    "composicion": {
+      "principio_activo": "oxicodona clorhidrato",
+      "excipientes": [
+        "lactosa",
+        "celulosa microcristalina",
+        "povidona",
+        "estearato de magnesio",
+        "dióxido de silicio coloidal"
+      ]
+    },
+    "indicaciones": [
+      "Dolor moderado a severo, agudo o crónico, refractario a analgésicos menores",
+      "Dolor oncológico o postoperatorio"
+    ],
+    "mecanismo": "Agonista puro opioide con afinidad por receptores µ, κ y δ; efecto analgésico, ansiolítico y sedante.",
+    "vias": [
+      "intravenosa (IV)",
+      "oral"
+    ],
+    "forma": [
+      "solución inyectable",
+      "tabletas (IR)",
+      "tabletas (PR)"
+    ],
+    "dosis": {
+      "IR_dolor_moderado_severo": "5–15 mg cada 4–6 h según necesidad.",
+      "PR_dolor_cronico": "10 mg cada 12 h; ajustar según respuesta (no superar 120 mg/día salvo pacientes tolerantes).",
+      "adultos_mayores_o_debilitados": "Iniciar con 5 mg cada 6 h (IR) o 5–10 mg cada 12 h (PR)."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 29,
+    "nombre": "Clorpromazina",
+    "sinonimos": [
+      "Largactil"
+    ],
+    "composicion": {
+      "principio_activo": "clorpromazina clorhidrato",
+      "excipientes": [
+        "lactosa",
+        "almidón de maíz",
+        "polivinilpirrolidona",
+        "croscarmelosa sódica",
+        "estearato de magnesio",
+        "Opadry Yellow (recubrimiento)",
+        "carbowax",
+        "alcohol etílico"
+      ]
+    },
+    "indicaciones": [
+      "Esquizofrenia y psicosis",
+      "Manía y agitación",
+      "Trastornos de conducta",
+      "Náuseas, vómito e hipo intratable",
+      "Coadyuvante en tétanos",
+      "Premedicación anestésica"
+    ],
+    "mecanismo": "Antipsicótico que bloquea dopamina D2, histamina y receptores alfa-adrenérgicos; reduce psicosis y agitación.",
+    "vias": [
+      "oral",
+      "intramuscular (IM)",
+      "intravenosa (IV)"
+    ],
+    "forma": [
+      "tabletas",
+      "solución inyectable"
+    ],
+    "dosis": {
+      "adultos_oral": "25–100 mg, 2–4 veces/día según necesidad.",
+      "adultos_IM_IV_agitacion_severa": "25–50 mg cada 4–6 h.",
+      "maximo_diario": "800 mg/día.",
+      "ninos_oral": "1–2 mg/kg/día en 2–4 dosis.",
+      "ninos_IM_IV": "Solo bajo supervisión hospitalaria."
+    },
+    "monopolio": false
+  },
+  {
+    "id": 30,
+    "nombre": "Modafinilo",
+    "sinonimos": [
+      "Vigil"
+    ],
+    "composicion": {
+      "principio_activo": "modafinilo"
+    },
+    "indicaciones": [
+      "Narcolepsia",
+      "Trastorno del sueño por turnos de trabajo",
+      "Apnea obstructiva del sueño con somnolencia residual"
+    ],
+    "mecanismo": "Aumenta liberación de monoaminas (dopamina, noradrenalina) al inhibir recaptación de dopamina; modula histamina, glutamato y GABA promoviendo vigilia.",
+    "vias": [
+      "oral"
+    ],
+    "forma": [
+      "tabletas"
+    ],
+    "dosis": {
+      "adultos": "200 mg en la mañana; puede dividirse 100 mg mañana y 100 mg al mediodía."
+    },
+    "monopolio": false
+  }
+]
